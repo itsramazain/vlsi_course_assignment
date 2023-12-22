@@ -1,0 +1,51 @@
+`timescale 1ns / 1ps
+module mydesign_tb();
+	reg b;
+	reg cin;
+	reg a;
+	wire cout;
+	wire s;
+	fulladder FA(a,b,cin,s,cout);
+	
+	initial
+	begin
+	a=0;b=0;cin=0;
+	
+	end
+
+	
+	initial
+	begin
+	#1;a=0;b=0;cin=0;
+	#1;a=0;b=0;cin=1;
+	#1;a=0;b=1;cin=0;
+	#1;a=0;b=1;cin=1;
+	#1;a=1;b=0;cin=0;
+	#1;a=1;b=0;cin=1;
+	#1;a=1;b=1;cin=0;
+	#1;a=1;b=0;cin=1;
+	#1;a=1;b=1;cin=1;
+	
+	
+	
+	
+	
+	
+	
+	
+	end
+	
+	
+	
+	initial
+	begin
+	#1000 $stop;
+	end
+	
+	
+	
+	initial
+	begin
+	
+	end
+endmodule
