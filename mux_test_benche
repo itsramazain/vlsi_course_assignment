@@ -1,0 +1,56 @@
+
+`timescale 1ns / 1ps
+module mydesign_tb();
+	reg i0,i1,i2,i3,i4,i5,i6,i7;
+	reg [2:0]k;
+	wire muxout;
+	mux8x1 DUT(k,i0,i1,i2,i3,i4,i5,i6,i7,muxout);
+	
+	
+	initial
+	begin
+	i0=1'b0;
+	i1=1'b0;
+	i2=1'b0;
+	i3=1'b0;
+	i4=1'b0;
+	i5=1'b0;
+	i6=1'b0;
+	i7=1'b0;
+	k=3'b0;
+	
+	end
+
+	
+	initial
+	begin
+	#1; i0=1'b1;i1=1'b0;i2=1'b0;i3=1'b0;i4=1'b0;i5=1'b0;i6=1'b0;i7=1'b0;k=3'b0;//should select 1
+	#1; i0=1'b1;i1=1'b1;i2=1'b0;i3=1'b0;i4=1'b0;i5=1'b0;i6=1'b0;i7=1'b0;k=3'b1;//should select 1
+	#1; i0=1'b0;i1=1'b1;i2=1'b1;i3=1'b1;i4=1'b0;i5=1'b0;i6=1'b0;i7=1'b0;k=3'b10;//should select 1
+	#1; i0=1'b0;i1=1'b0;i2=1'b0;i3=1'b0;i4=1'b0;i5=1'b0;i6=1'b0;i7=1'b0;k=3'b11;//should select 0
+	
+	#1; i0=1'b0;i1=1'b0;i2=1'b0;i3=1'b0;i4=1'b0;i5=1'b0;i6=1'b0;i7=1'b0;k=3'b100;//should select 0
+	
+	
+	
+	
+	
+	
+	
+	
+	end
+	
+	
+	
+	initial
+	begin
+	#1000 $stop;
+	end
+	
+	
+	
+	initial
+	begin
+	
+	end
+endmodule
