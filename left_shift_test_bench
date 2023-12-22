@@ -1,0 +1,48 @@
+`timescale 1ns / 1ps
+module mydesign_tb();
+	reg [14:0]z;
+	reg [2:0]k;
+	wire [7:0]out;
+	universal_shifter DUT(~k,z,out);
+	
+	
+	initial
+	begin
+	z=15'b000000010000000;
+	k=3'b0;
+	
+	end
+
+	
+	initial
+	begin
+	#1;k=3'b1;//shift left by 1 out=2
+	#1;k=3'b10;//shift left by 2 out=4
+	#1;k=3'b11;//shift left by 3 out=8
+	#1;k=3'b100;//shift left by 4 out=16
+	#1;k=3'b101;//shift left by 5 out=32
+	#1;k=3'b110;//shift left by 6 out=64
+	#1;k=3'b111;//shift left by 1 out=128
+	
+	
+	
+	
+	
+	
+	
+	end
+	
+	
+	
+	initial
+	begin
+	#1000 $stop;
+	end
+	
+	
+	
+	initial
+	begin
+	
+	end
+endmodule
