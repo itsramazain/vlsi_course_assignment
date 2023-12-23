@@ -1,0 +1,45 @@
+`timescale 1ns / 1ps
+module mydesign_tb();
+	reg [15:0]b;
+	reg [15:0]a;
+	
+	wire cout;
+	wire [15:0]sum ;
+	acrrypropegateadder2 DUT(a,b,cout,sum);
+	
+	initial
+	begin
+	a=8'd4;b=8'd1;
+	
+	end
+
+	
+	initial
+	begin
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	end
+	
+	
+	
+	initial
+	begin
+	#1000 $stop;
+	end
+	
+	
+	
+	initial
+	begin
+	
+	end
+endmodule
