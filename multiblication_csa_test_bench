@@ -1,0 +1,57 @@
+`timescale 1ns / 1ps
+module mydesign_tb();
+	wire [15:0]fout;
+	reg [7:0]x,y;
+	wire cout;
+	
+	wire [7:0]csa1sum,csa1carry;
+	wire [12:0]csa2sum,csa2carry;
+	wire [12:0]csa4sum,csa4carry;
+	wire [14:0]csa3sum,csa3carry;
+	wire [14:0] fithcsasum,fithcsacarry;
+	wire [14:0] sixthcsasum,sixthcsacarry;
+	wire [7:0]a;
+	wire [8:0]b;
+	
+	
+  multiblication DUT(b,a,x,y,fout,cout,sixthcsasum,sixthcsacarry,csa2sum,csa2carry,csa1sum,csa3sum,csa3carry,csa1carry,csa4sum,csa4carry,fithcsasum,fithcsacarry,);
+
+	
+	initial
+	begin
+	x=8'd4;y=8'd8;
+	
+	end
+
+	
+	initial
+	begin
+	
+	#10;x=8'd10;y=8'd2;
+	#10;x=8'd4;y=8'd3;
+	#10;x=8'd100;y=8'd8;
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	end
+	
+	
+	
+	initial
+	begin
+	#1000 $stop;
+	end
+	
+	
+	
+	initial
+	begin
+	
+	end
+endmodule
