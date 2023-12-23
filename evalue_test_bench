@@ -1,0 +1,44 @@
+`timescale 1ns / 1ps
+module mydesign_tb();
+	reg [7:0]b;
+	reg [7:0]a;
+	wire [7:0]e;
+	reg [2:0]i;
+	 Evalue DUT(a,b,e,i);
+	
+	initial
+	begin
+	a=8'd4;b=8'd1;i=3'd2;
+	
+	end
+
+	
+	initial
+	begin
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	end
+	
+	
+	
+	initial
+	begin
+	#1000 $stop;
+	end
+	
+	
+	
+	initial
+	begin
+	
+	end
+endmodule
