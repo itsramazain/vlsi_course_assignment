@@ -1,21 +1,23 @@
 `timescale 1ns / 1ps
 module mydesign_tb();
-	reg [7:0]b;
-	reg [7:0]a;
-	wire [7:0]e;
-	reg [2:0]i;
-	 Evalue DUT(a,b,e,i);
+	reg [7:0]a,b;
+	reg[2:0]i,j;
+	wire [8:0]e;
+	Evalue DUT(a,b,e,i,j);
 	
 	initial
 	begin
-	a=8'd4;b=8'd1;i=3'd2;
+	a=8'd4;b=8'd1;i=3'd2;j=2'd2;
 	
 	end
 
 	
 	initial
 	begin
-	
+	#1;a=8'd5;b=8'd6;i=3'd1;j=2'd2;
+	#1;a=8'd7;b=8'd34;i=3'd3;j=2'd3;
+	#1;a=8'd10;b=8'd9;i=3'd1;j=2'd3;
+	#1;a=8'd70;b=8'd100;i=3'd3;j=2'd4;
 	
 	
 	
