@@ -4,17 +4,11 @@ module mydesign_tb();
 	reg [7:0]x,y;
 	wire cout;
 	
-	wire [7:0]csa1sum,csa1carry;
-	wire [12:0]csa2sum,csa2carry;
-	wire [12:0]csa4sum,csa4carry;
-	wire [14:0]csa3sum,csa3carry;
-	wire [14:0] fithcsasum,fithcsacarry;
-	wire [14:0] sixthcsasum,sixthcsacarry;
-	wire [7:0]a;
-	wire [8:0]b;
+	multiblication mu(x,y,fout,cout);
 	
 	
-  multiblication DUT(b,a,x,y,fout,cout,sixthcsasum,sixthcsacarry,csa2sum,csa2carry,csa1sum,csa3sum,csa3carry,csa1carry,csa4sum,csa4carry,fithcsasum,fithcsacarry,);
+	
+	
 
 	
 	initial
